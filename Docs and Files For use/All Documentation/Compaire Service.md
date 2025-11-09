@@ -1,43 +1,65 @@
-# 🚗 MLModel AI Controller Module Documentation
+# CompareService Documentation
 
-## videos 
-https://www.youtube.com/watch?v=fxyIefV8cuw
+## Overview
+`CompareService` is a service class that provides string comparison functionality.  
+It implements the `ICompareService` interface and mainly offers:
+
+1. **Levenshtein Distance Calculation** – Measures the minimum number of single-character edits required to change one string into another.
+2. **Similarity Percentage** – Calculates how similar two strings are as a percentage based on Levenshtein distance.
+
+---
+
+## Methods
+
+### 1. LevenshteinDistance
+
+```csharp
+- public async Task<int> LevenshteinDistance(string s, string t)
+```
 
 ```
-When making a photo model 
-Image Classification
-When it gets break down in training, look below at the error screen and read where it is standing because no error appears, but he writes what it is doing below
-Most likely, there will be a problem downloading the Manol download file, putting it in this path, and creating what is required to do the correct training
-Close and open the project again and tell him to do training again. it will know that it does not need to download the file again 
-https://aka.ms/mlnet-resources/meta/resnet_v2_50_299.meta
-Download it and move it to this path 
-C:\Users\hp\AppData\Local\Temp\MLNET\resnet_v2_50_299.meta
-It is better to leave the project outside the C
+# Description:
+Calculates the Levenshtein distance between two strings s and t.
+This distance represents the minimum number of single-character insertions, deletions, or substitutions required to change one string into the other.
+
+## Parameters:
+s : The first string to compare.
+t : The second string to compare.
+
+## Returns:
+int – The computed distance between the two strings.
+
+## Implementation Details:
+Initializes a 2D array d of size (n+1, m+1) where n and m are the lengths of s and t.
+Sets up base cases where one of the strings is empty.
+
+## Iterates through each character of both strings:
+Calculates the cost of substitution (0 if characters are equal, 1 otherwise).
+
+## Updates the distance matrix using the minimum of:
+Deletion
+Insertion
+Substitution
+```
+
+### 2. SimilarityPercentage
+```csharp
+-public async Task<double> SimilarityPercentage(string? s, string? t)
 ```
 
 ```
-عند عمل موديل صور 
-Image Classification
-لما يعلق في التدريب بص تحت في شاشة الايرور واقرأ هو واقف فين لأنه لا يظهر خطأ لاكنه يكتب ما يفعله تحت
-في الاغلب ستحدث مشكلة في تحميل ملف حمله مانول وحطه في المسار ده وانشء المطلوب علشان يعمل تدريب صح
-واقفل وافتح المشروع من جديد وقوله يعمل تدريب من جديد هيعرف انه مش محتاج ينزل الملف مرة اخرى 
-https://aka.ms/mlnet-resources/meta/resnet_v2_50_299.meta
-حمله وانقله للمسار ده 
-C:\Users\hp\AppData\Local\Temp\MLNET\resnet_v2_50_299.meta
-ويفضل تخلي المشروع بره ال c احسن
+#Description:
+Calculates the similarity percentage between two strings s and t based on the Levenshtein distance.
+
+## Parameters:
+s : First string to compare (nullable).
+t : Second string to compare (nullable).
+
+## Returns:
+double – A value between 0 and 100 representing how similar the strings are.
+
+## Implementation Details:
+### Returns 0 if either string is null.
+### Computes the Levenshtein distance between s and t.
+### Using For Calculates Similarity
 ```
-## ORC Project
-- we extracted text data from (img and pdf) as english and arabic text using lipraries free in .Net
-
-### First Moduel
-extracted text data from (img) as english and arabic text using lipraries SixLabors.ImageSharp -- Tesseract
-
-#### SixLabors.ImageSharp
-used for sharpen and discrepancy and convert img to gray and then Crop data section
-
-#### Tesseract
-used for get data from images as arabic and english **first download language files as ara.traineddata -- eng.traineddata **
-
-*link 1 for little files more faster but low quality https://github.com/tesseract-ocr/tessdata *
-*link 2 for big files more slower but high quality https://github.com/tesseract-ocr/tessdata_best * 
->>>> **put downloaded files ara,eng and put them in folder with name `tessdata` and put this folder in project which has this package installed**
