@@ -36,20 +36,7 @@ bld/
 [Ll]ogs/
 ######
 ######
-IDClassificationNew1/[Dd]ebug/
-IDClassificationNew1/[Dd]ebugPublic/
-IDClassificationNew1/[Rr]elease/
-IDClassificationNew1/[Rr]eleases/
-IDClassificationNew1/x64/
-IDClassificationNew1/x86/
-IDClassificationNew1/[Ww][Ii][Nn]32/
-IDClassificationNew1/[Aa][Rr][Mm]/
-IDClassificationNew1/[Aa][Rr][Mm]64/
-IDClassificationNew1/bld/
-IDClassificationNew1/[Bb]in/
-IDClassificationNew1/[Oo]bj/
-IDClassificationNew1/[Ll]og/
-IDClassificationNew1/[Ll]ogs/
+
 
 
 # Visual Studio 2015/2017 cache/options directory
