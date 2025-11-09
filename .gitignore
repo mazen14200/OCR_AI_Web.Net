@@ -68,7 +68,7 @@ packages/
 appsettings.Development.json
 
 # ملفات publish المؤقتة
-/wwwroot/
+#/wwwroot/
 /publish/
 *.db
 
@@ -99,10 +99,10 @@ appsettings.Development.json
 ########################################
 
 # صور النتائج أو ملفات الاختبار المؤقتة
-*.png
-*.jpg
-*.jpeg
-*.gif
+#*.png
+#*.jpg
+#*.jpeg
+#*.gif
 
 # ملفات Backup
 *.bak
